@@ -4,11 +4,7 @@ import sn.ism.auchan.data.entities.Categorie;
 
 import java.util.List;
 
-public interface CategorieService {
+public interface CategorieService extends Service<Categorie> {
     // Use Case Categorie ==> Gérer Catégorie
-    Categorie create(Categorie categorieRequest);
-    Categorie update(Long id,Categorie categorieRequest);
-    Categorie getById(Long id);
-    boolean delete(Long id);
-    List<Categorie> getAll();
+
 }

@@ -1,21 +1,24 @@
 package sn.ism.auchan.web.controllers;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sn.ism.auchan.data.entities.Categorie;
 import sn.ism.auchan.web.dto.response.CategorieAllResponse;
 
 import java.util.List;
-@RequestMapping("/categorie")
+import java.util.Map;
+
+@RequestMapping("/categories")
 public interface CategorieController {
-    @GetMapping("/list")
+    @GetMapping("")
     ResponseEntity<List<CategorieAllResponse>> getAll();
-    @GetMapping("/one/{id}")
-    ResponseEntity<CategorieAllResponse> getOne(@PathVariable Long id);
-    @PostMapping("/create")
-    ResponseEntity<Categorie> create(@RequestBody() Categorie categorie);
-    @PutMapping("/update/{id}")
+    @GetMapping("/{id}")
+    ResponseEntity<Map<String, Object>> getOne(@PathVariable Long id);
+    @PostMapping("")
+    ResponseEntity<Categorie> create(@Valid @RequestBody() Categorie categorie);
+    @PutMapping("/{id}")
     ResponseEntity<Categorie> update(@PathVariable Long id, @RequestBody() Categorie categorie);
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     ResponseEntity<Boolean> delete(@PathVariable Long id);
 }

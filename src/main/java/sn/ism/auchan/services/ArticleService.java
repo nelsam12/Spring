@@ -4,12 +4,7 @@ import sn.ism.auchan.data.entities.Article;
 
 import java.util.List;
 
-public interface ArticleService {
+public interface ArticleService extends Service<Article> {
     // Use Case Categorie ==> Gérer Catégorie
-    Article create(Article articleRequest);
-    Article update(Long id,Article articleRequest);
-    Article getById(Long id);
-    boolean delete(Long id);
-    List<Article> getAll();
     List<Article> findAllByCategorie(Long categorieId);
 }

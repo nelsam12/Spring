@@ -23,6 +23,11 @@ public class ArticleControllerImpl implements ArticleController {
     private final ArticleService articleService;
     private final CategorieService categorieService;
 
+    public ArticleControllerImpl(ArticleService articleService, CategorieService categorieService) {
+        this.articleService = articleService;
+        this.categorieService = categorieService;
+    }
+
     @Override
     public ResponseEntity<List<ArticleAllResponse>> getAll() {
         var articles = articleService.getAll();

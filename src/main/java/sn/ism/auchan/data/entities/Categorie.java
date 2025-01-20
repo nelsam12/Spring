@@ -8,13 +8,12 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Entity
 public class Categorie extends AbstractType {
-
     // Relation
     @OneToMany(mappedBy = "categorie") // categorie_articles (categorie_id, article_id)
     private List<Article> articles;

@@ -14,6 +14,9 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 public class CategorieMock implements CommandLineRunner {
+    public CategorieMock(CategorieRepository categorieRepository) {
+        this.categorieRepository = categorieRepository;
+    }
 
     private final CategorieRepository categorieRepository;
     @Override

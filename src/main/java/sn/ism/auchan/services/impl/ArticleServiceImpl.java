@@ -17,10 +17,17 @@ public class ArticleServiceImpl implements ArticleService {
     private final ArticleRepository articleRepository;
     private final CategorieRepository categorieRepository;
 
+
+
     @Override
     public Article create(Article articleRequest) {
         System.out.println("Create Article");
         return articleRepository.save(articleRequest);
+    }
+
+    public ArticleServiceImpl(ArticleRepository articleRepository, CategorieRepository categorieRepository) {
+        this.articleRepository = articleRepository;
+        this.categorieRepository = categorieRepository;
     }
 
     @Override

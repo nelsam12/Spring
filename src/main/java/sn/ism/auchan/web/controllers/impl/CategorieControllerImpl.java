@@ -8,16 +8,22 @@ import org.springframework.web.bind.annotation.RestController;
 import sn.ism.auchan.data.entities.Categorie;
 import sn.ism.auchan.services.CategorieService;
 import sn.ism.auchan.web.controllers.CategorieController;
+import sn.ism.auchan.web.dto.RestResponse;
 import sn.ism.auchan.web.dto.response.ArticleAllResponse;
 import sn.ism.auchan.web.dto.response.CategorieAllResponse;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
 public class CategorieControllerImpl implements CategorieController {
 
     private final CategorieService categorieService;
+
+    public CategorieControllerImpl(CategorieService categorieService) {
+        this.categorieService = categorieService;
+    }
 
     @Override
     public ResponseEntity<List<CategorieAllResponse>> getAll() {
@@ -30,9 +36,13 @@ public class CategorieControllerImpl implements CategorieController {
     }
 
     @Override
-    public ResponseEntity<CategorieAllResponse> getOne(Long id) {
+    public ResponseEntity<Map<String, Object>> getOne(Long id) {
         var categorie = categorieService.getById(id);
-        return new ResponseEntity<>(new CategorieAllResponse(categorie), HttpStatus.OK);
+        return new ResponseEntity<>(RestResponse.response(
+                    HttpStatus.OK,
+                    new CategorieAllResponse(categorie),
+                    "CategorieAllResponse")
+        , HttpStatus.OK);
     }
 
     @Override

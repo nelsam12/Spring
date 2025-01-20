@@ -7,9 +7,7 @@ import sn.ism.auchan.data.entities.Article;
 
 @Getter
 @Setter
-
 public class ArticleAllResponse {
-
     protected Long id;
     protected String name;
     protected String code;

@@ -6,12 +6,12 @@ import lombok.Setter;
 import sn.ism.auchan.data.entities.Article;
 import sn.ism.auchan.data.entities.Categorie;
 
+
 @Getter
 @Setter
-
 public class ArticleCreateRequest {
-    protected String name;
-    protected String code;
+    private String name;
+    private String code;
     private Integer qteStock;
     private Float prix;
     private Long categorieId;

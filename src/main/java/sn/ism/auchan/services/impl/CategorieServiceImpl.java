@@ -14,6 +14,11 @@ public class CategorieServiceImpl implements CategorieService {
     // Couplage Faible
     private final CategorieRepository categorieRepository;
 
+
+    public CategorieServiceImpl(CategorieRepository categorieRepository) {
+        this.categorieRepository = categorieRepository;
+    }
+
     @Override
     public Categorie create(Categorie categorieRequest) {
         return categorieRepository.save(categorieRequest);

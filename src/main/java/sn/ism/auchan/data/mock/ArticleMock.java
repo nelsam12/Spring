@@ -1,6 +1,8 @@
 package sn.ism.auchan.data.mock;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -16,6 +18,10 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 public class ArticleMock implements CommandLineRunner {
+    public ArticleMock(CategorieRepository categorieRepository, ArticleRepository articleRepository) {
+        this.categorieRepository = categorieRepository;
+        this.articleRepository = articleRepository;
+    }
 
     private final CategorieRepository categorieRepository;
     private final ArticleRepository articleRepository;
