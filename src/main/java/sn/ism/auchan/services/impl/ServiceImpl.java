@@ -1,6 +1,4 @@
 package sn.ism.auchan.services.impl;
-
-import jakarta.persistence.MappedSuperclass;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import sn.ism.auchan.services.Service;

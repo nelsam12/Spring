@@ -9,7 +9,6 @@ import sn.ism.auchan.data.entities.Client;
 import sn.ism.auchan.web.dto.request.ClientCreateRequestWithCommandes;
 import sn.ism.auchan.web.dto.response.ClientSimpleResponse;
 import sn.ism.auchan.web.dto.response.ClientWithCommande;
-import sn.ism.auchan.web.dto.response.ClientWithPaginateCommandeResponse;
 
 import java.util.Map;
 

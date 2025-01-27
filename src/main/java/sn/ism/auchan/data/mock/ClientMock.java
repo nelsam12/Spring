@@ -4,12 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import sn.ism.auchan.data.entities.Categorie;
 import sn.ism.auchan.data.entities.Client;
 import sn.ism.auchan.data.entities.Commande;
 import sn.ism.auchan.data.enums.StatusEnum;
-import sn.ism.auchan.data.repository.CategorieRepository;
-import sn.ism.auchan.data.repository.ClientRepository;
 import sn.ism.auchan.services.ClientService;
 
 import java.time.LocalDateTime;
@@ -29,7 +26,7 @@ public class ClientMock implements CommandLineRunner {
 //    }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         List<Client> clients = new ArrayList<>();
         Random random = new Random();
         String[] prefixes = {"77", "78", "70"};

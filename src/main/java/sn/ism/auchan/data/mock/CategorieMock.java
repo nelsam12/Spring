@@ -20,7 +20,7 @@ public class CategorieMock implements CommandLineRunner {
 
     private final CategorieRepository categorieRepository;
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         List<Categorie> categories = new ArrayList<>();
         for (int i = 1; i <= 10; i++) {
             Categorie c = new Categorie();
