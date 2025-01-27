@@ -15,9 +15,9 @@ public class CategorieServiceImpl implements CategorieService {
     private final CategorieRepository categorieRepository;
 
 
-    public CategorieServiceImpl(CategorieRepository categorieRepository) {
-        this.categorieRepository = categorieRepository;
-    }
+//    public CategorieServiceImpl(CategorieRepository categorieRepository) {
+//        this.categorieRepository = categorieRepository;
+//    }
 
     @Override
     public Categorie create(Categorie categorieRequest) {

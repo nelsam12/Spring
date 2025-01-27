@@ -37,59 +37,59 @@ public class Client {
                 '}';
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNomComplet() {
-        return nomComplet;
-    }
-
-    public void setNomComplet(String nomComplet) {
-        this.nomComplet = nomComplet;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public String getPays() {
-        return pays;
-    }
-
-    public void setPays(String pays) {
-        this.pays = pays;
-    }
-
-    public String getVille() {
-        return ville;
-    }
-
-    public void setVille(String ville) {
-        this.ville = ville;
-    }
-
-    public String getRue() {
-        return rue;
-    }
-
-    public void setRue(String rue) {
-        this.rue = rue;
-    }
-
-    public List<Commande> getCommandes() {
-        return commandes;
-    }
-
-    public void setCommandes(List<Commande> commandes) {
-        this.commandes = commandes;
-    }
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public String getNomComplet() {
+//        return nomComplet;
+//    }
+//
+//    public void setNomComplet(String nomComplet) {
+//        this.nomComplet = nomComplet;
+//    }
+//
+//    public String getTelephone() {
+//        return telephone;
+//    }
+//
+//    public void setTelephone(String telephone) {
+//        this.telephone = telephone;
+//    }
+//
+//    public String getPays() {
+//        return pays;
+//    }
+//
+//    public void setPays(String pays) {
+//        this.pays = pays;
+//    }
+//
+//    public String getVille() {
+//        return ville;
+//    }
+//
+//    public void setVille(String ville) {
+//        this.ville = ville;
+//    }
+//
+//    public String getRue() {
+//        return rue;
+//    }
+//
+//    public void setRue(String rue) {
+//        this.rue = rue;
+//    }
+//
+//    public List<Commande> getCommandes() {
+//        return commandes;
+//    }
+//
+//    public void setCommandes(List<Commande> commandes) {
+//        this.commandes = commandes;
+//    }
 }

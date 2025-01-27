@@ -31,75 +31,75 @@ public class Commande {
     @ManyToOne(optional = false)
     private Client client; // client_id
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalDateTime getDateCommande() {
-        return dateCommande;
-    }
-
-    public void setDateCommande(LocalDateTime dateCommande) {
-        this.dateCommande = dateCommande;
-    }
-
-    public Double getMontant() {
-        return montant;
-    }
-
-    public void setMontant(Double montant) {
-        this.montant = montant;
-    }
-
-    public String getPays() {
-        return pays;
-    }
-
-    public void setPays(String pays) {
-        this.pays = pays;
-    }
-
-    public String getVille() {
-        return ville;
-    }
-
-    public void setVille(String ville) {
-        this.ville = ville;
-    }
-
-    public String getRue() {
-        return rue;
-    }
-
-    public void setRue(String rue) {
-        this.rue = rue;
-    }
-
-    public StatusEnum getStatus() {
-        return status;
-    }
-
-    public void setStatus(StatusEnum status) {
-        this.status = status;
-    }
-
-    public List<Detail> getDetails() {
-        return details;
-    }
-
-    public void setDetails(List<Detail> details) {
-        this.details = details;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public LocalDateTime getDateCommande() {
+//        return dateCommande;
+//    }
+//
+//    public void setDateCommande(LocalDateTime dateCommande) {
+//        this.dateCommande = dateCommande;
+//    }
+//
+//    public Double getMontant() {
+//        return montant;
+//    }
+//
+//    public void setMontant(Double montant) {
+//        this.montant = montant;
+//    }
+//
+//    public String getPays() {
+//        return pays;
+//    }
+//
+//    public void setPays(String pays) {
+//        this.pays = pays;
+//    }
+//
+//    public String getVille() {
+//        return ville;
+//    }
+//
+//    public void setVille(String ville) {
+//        this.ville = ville;
+//    }
+//
+//    public String getRue() {
+//        return rue;
+//    }
+//
+//    public void setRue(String rue) {
+//        this.rue = rue;
+//    }
+//
+//    public StatusEnum getStatus() {
+//        return status;
+//    }
+//
+//    public void setStatus(StatusEnum status) {
+//        this.status = status;
+//    }
+//
+//    public List<Detail> getDetails() {
+//        return details;
+//    }
+//
+//    public void setDetails(List<Detail> details) {
+//        this.details = details;
+//    }
+//
+//    public Client getClient() {
+//        return client;
+//    }
+//
+//    public void setClient(Client client) {
+//        this.client = client;
+//    }
 }

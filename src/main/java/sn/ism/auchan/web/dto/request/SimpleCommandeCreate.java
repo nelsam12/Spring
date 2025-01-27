@@ -25,54 +25,54 @@ public class SimpleCommandeCreate {
         dateCommande = LocalDateTime.now();
         status = StatusEnum.ENCOURS;
     }
-
-    public StatusEnum getStatus() {
-        return status;
-    }
-
-    public void setStatus(StatusEnum status) {
-        this.status = status;
-    }
-
-    public LocalDateTime getDateCommande() {
-        return dateCommande;
-    }
-
-    public void setDateCommande(LocalDateTime dateCommande) {
-        this.dateCommande = dateCommande;
-    }
-
-    public Double getMontant() {
-        return montant;
-    }
-
-    public void setMontant(Double montant) {
-        this.montant = montant;
-    }
-
-    public String getPays() {
-        return pays;
-    }
-
-    public void setPays(String pays) {
-        this.pays = pays;
-    }
-
-    public String getVille() {
-        return ville;
-    }
-
-    public void setVille(String ville) {
-        this.ville = ville;
-    }
-
-    public String getRue() {
-        return rue;
-    }
-
-    public void setRue(String rue) {
-        this.rue = rue;
-    }
+//
+//    public StatusEnum getStatus() {
+//        return status;
+//    }
+//
+//    public void setStatus(StatusEnum status) {
+//        this.status = status;
+//    }
+//
+//    public LocalDateTime getDateCommande() {
+//        return dateCommande;
+//    }
+//
+//    public void setDateCommande(LocalDateTime dateCommande) {
+//        this.dateCommande = dateCommande;
+//    }
+//
+//    public Double getMontant() {
+//        return montant;
+//    }
+//
+//    public void setMontant(Double montant) {
+//        this.montant = montant;
+//    }
+//
+//    public String getPays() {
+//        return pays;
+//    }
+//
+//    public void setPays(String pays) {
+//        this.pays = pays;
+//    }
+//
+//    public String getVille() {
+//        return ville;
+//    }
+//
+//    public void setVille(String ville) {
+//        this.ville = ville;
+//    }
+//
+//    public String getRue() {
+//        return rue;
+//    }
+//
+//    public void setRue(String rue) {
+//        this.rue = rue;
+//    }
 
     @Override
     public String toString() {

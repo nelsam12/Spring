@@ -25,10 +25,10 @@ public class ArticleServiceImpl implements ArticleService {
         return articleRepository.save(articleRequest);
     }
 
-    public ArticleServiceImpl(ArticleRepository articleRepository, CategorieRepository categorieRepository) {
-        this.articleRepository = articleRepository;
-        this.categorieRepository = categorieRepository;
-    }
+//    public ArticleServiceImpl(ArticleRepository articleRepository, CategorieRepository categorieRepository) {
+//        this.articleRepository = articleRepository;
+//        this.categorieRepository = categorieRepository;
+//    }
 
     @Override
     public Article update(Long id, Article articleRequest) {

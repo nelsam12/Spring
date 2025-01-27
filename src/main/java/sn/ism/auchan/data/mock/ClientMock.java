@@ -19,14 +19,14 @@ import java.util.Random;
 
 @Order(1)
 @Component
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class ClientMock implements CommandLineRunner {
 
     private final ClientService clientService;
 
-    public ClientMock(ClientService clientService) {
-        this.clientService = clientService;
-    }
+//    public ClientMock(ClientService clientService) {
+//        this.clientService = clientService;
+//    }
 
     @Override
     public void run(String... args) throws Exception {

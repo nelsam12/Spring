@@ -3,13 +3,11 @@ package sn.ism.auchan.web.controllers.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import sn.ism.auchan.data.entities.Categorie;
 import sn.ism.auchan.services.CategorieService;
 import sn.ism.auchan.web.controllers.CategorieController;
 import sn.ism.auchan.web.dto.RestResponse;
-import sn.ism.auchan.web.dto.response.ArticleAllResponse;
 import sn.ism.auchan.web.dto.response.CategorieAllResponse;
 
 import java.util.List;
@@ -20,10 +18,6 @@ import java.util.Map;
 public class CategorieControllerImpl implements CategorieController {
 
     private final CategorieService categorieService;
-
-    public CategorieControllerImpl(CategorieService categorieService) {
-        this.categorieService = categorieService;
-    }
 
     @Override
     public ResponseEntity<List<CategorieAllResponse>> getAll() {

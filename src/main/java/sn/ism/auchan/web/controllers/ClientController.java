@@ -17,12 +17,12 @@ import java.util.Map;
 public interface ClientController {
     //?page=1&size=1
     @GetMapping("")
-    ResponseEntity<Page<ClientSimpleResponse>> getAll(
+    ResponseEntity<Map<String, Object>> getAll(
             @RequestParam(defaultValue = "0")int page,
             @RequestParam(defaultValue = "8")int size
     );
     @GetMapping("/{id}")
-    ResponseEntity<ClientSimpleResponse> getOne(@PathVariable Long id);
+    ResponseEntity<Map<String, Object>> getOne(@PathVariable Long id);
     @PostMapping("")
     ResponseEntity<Page<ClientSimpleResponse>> create(@Valid @RequestBody() Client client);
     @PostMapping("/commande")
@@ -33,4 +33,9 @@ public interface ClientController {
     ResponseEntity<String> delete(@PathVariable Long id);
     @GetMapping("/{id}/commandes")
     ResponseEntity<ClientWithCommande> getClientWithCommandes(@PathVariable() Long id);
+    @GetMapping("/2/{id}/commandes")
+    ResponseEntity<Map<String, Object>> getClientWithCommandesV2(@PathVariable() Long id,
+                                                                 @RequestParam(defaultValue = "0")int page,
+                                                                 @RequestParam(defaultValue = "6")int size);
+
 }

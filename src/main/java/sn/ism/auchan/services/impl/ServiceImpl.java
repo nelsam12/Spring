@@ -12,9 +12,9 @@ public abstract class ServiceImpl<T, R extends JpaRepository<T, Long>> implement
 
     protected final R repository;
 
-    public ServiceImpl(R repository) {
-        this.repository = repository;
-    }
+//    public ServiceImpl(R repository) {
+//        this.repository = repository;
+//    }
 
     @Override
     public T create(T itemRequest) {
