@@ -9,18 +9,18 @@ import sn.ism.auchan.web.dto.response.ArticleOneResponse;
 
 import java.util.List;
 
-@RequestMapping("/article")
+@RequestMapping("/articles")
 public interface ArticleController {
-    @GetMapping("/list")
+    @GetMapping("")
     ResponseEntity<List<ArticleAllResponse>> getAll();
-    @GetMapping("/one/{id}")
+    @GetMapping("/{id}")
     ResponseEntity<ArticleOneResponse> getOne(@PathVariable Long id);
-    @PostMapping("/create")
+    @PostMapping("")
     ResponseEntity<ArticleOneResponse> create(@RequestBody() ArticleCreateRequest article);
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     ResponseEntity<Article> update(@PathVariable Long id, @RequestBody() Article article);
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     ResponseEntity<Boolean> delete(@PathVariable Long id);
-    @GetMapping("/{categorieId}/articles")
+    @GetMapping("/categorie/{categorieId}")
     ResponseEntity<List<ArticleOneResponse>> getArticlesByCategorie(@PathVariable Long categorieId);
 }

@@ -3,7 +3,6 @@ package sn.ism.auchan.web.dto.response;
 
 import lombok.Getter;
 import lombok.Setter;
-import sn.ism.auchan.data.entities.Article;
 
 @Getter
 @Setter
@@ -15,14 +14,14 @@ public class ArticleAllResponse {
     private Float prix;
     private String categorieName;
 
-    public ArticleAllResponse(Article article) {
-        this.id = article.getId();
-        this.name = article.getName();
-        this.code = article.getCode();
-        this.qteStock = article.getQteStock();
-        this.prix = article.getPrix();
-        this.categorieName = article.getCategorie().getName();
-    }
+//    public ArticleAllResponse(Article article) {
+//        this.id = article.getId();
+//        this.name = article.getName();
+//        this.code = article.getCode();
+//        this.qteStock = article.getQteStock();
+//        this.prix = article.getPrix();
+//        this.categorieName = article.getCategorie().getName();
+//    }
 
     // Entity ==> Dto
 

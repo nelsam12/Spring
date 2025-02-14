@@ -48,6 +48,7 @@ public class DevoirMapper {
     public static ClientResponse toClientResponse(Client client) {
         return ClientResponse
                         .builder()
+                .id(client.getId())
                         .rue(client.getRue())
                         .ville(client.getVille())
                         .pays(client.getPays())

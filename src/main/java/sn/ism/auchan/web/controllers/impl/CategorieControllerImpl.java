@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import sn.ism.auchan.data.entities.Categorie;
 import sn.ism.auchan.services.CategorieService;
+import sn.ism.auchan.utils.mappers.CategorieMapper;
 import sn.ism.auchan.web.controllers.CategorieController;
 import sn.ism.auchan.web.dto.RestResponse;
 import sn.ism.auchan.web.dto.response.CategorieAllResponse;
@@ -24,7 +25,7 @@ public class CategorieControllerImpl implements CategorieController {
         var categories = categorieService.getAll();
         var categoriesList = categories
                 .stream()
-                .map(CategorieAllResponse::new)
+                .map(CategorieMapper.INSTANCE::toDto)
                 .toList();
         return new ResponseEntity<>(categoriesList,HttpStatus.OK);
     }
@@ -34,7 +35,7 @@ public class CategorieControllerImpl implements CategorieController {
         var categorie = categorieService.getById(id);
         return new ResponseEntity<>(RestResponse.response(
                     HttpStatus.OK,
-                    new CategorieAllResponse(categorie),
+                CategorieMapper.INSTANCE.toDto(categorie),
                     "CategorieAllResponse")
         , HttpStatus.OK);
     }

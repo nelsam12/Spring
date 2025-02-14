@@ -12,6 +12,7 @@ import java.util.List;
  @Builder
 public class ClientResponse {
 //  au lieu de setNomComplet, il a mis nomComplet !
+     private Long id;
     private String nomComplet;
     private String telephone;
     private String pays;

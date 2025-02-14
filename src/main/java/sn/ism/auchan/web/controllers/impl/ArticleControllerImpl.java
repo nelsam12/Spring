@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import sn.ism.auchan.data.entities.Article;
 import sn.ism.auchan.services.ArticleService;
 import sn.ism.auchan.services.CategorieService;
+import sn.ism.auchan.utils.mappers.ArticleMapper;
 import sn.ism.auchan.web.controllers.ArticleController;
 import sn.ism.auchan.web.dto.request.ArticleCreateRequest;
 import sn.ism.auchan.web.dto.response.ArticleAllResponse;
@@ -27,7 +28,7 @@ public class ArticleControllerImpl implements ArticleController {
         // Mappage
         var articlesList = articles
                 .stream()
-                .map(ArticleAllResponse::new)
+                .map(ArticleMapper.INSTANCE::toDto)
                 .toList();
         return new ResponseEntity<>(articlesList,HttpStatus.OK);
     }
@@ -35,7 +36,7 @@ public class ArticleControllerImpl implements ArticleController {
     @Override
     public ResponseEntity<ArticleOneResponse> getOne(Long id) {
         var article = articleService.getById(id);
-        return new ResponseEntity<>(new ArticleOneResponse(article), HttpStatus.OK);
+        return new ResponseEntity<>(ArticleMapper.INSTANCE.toDto2(article), HttpStatus.OK);
     }
 
     @Override
@@ -43,7 +44,7 @@ public class ArticleControllerImpl implements ArticleController {
         var articleCreated = articleService.create(article.toEntity());
         var categorie = categorieService.getById(articleCreated.getCategorie().getId());
         articleCreated.setCategorie(categorie);
-        return new ResponseEntity<>(new ArticleOneResponse(articleCreated), HttpStatus.CREATED);
+        return new ResponseEntity<>(ArticleMapper.INSTANCE.toDto2(articleCreated), HttpStatus.CREATED);
     }
 
     @Override
@@ -65,7 +66,7 @@ public class ArticleControllerImpl implements ArticleController {
         var articles = articleService.findAllByCategorie(categorieId);
         var articlesList = articles
                 .stream()
-                .map(ArticleOneResponse::new)
+                .map(ArticleMapper.INSTANCE::toDto2)
                 .toList();
         return new ResponseEntity<>(articlesList,HttpStatus.OK);
     }

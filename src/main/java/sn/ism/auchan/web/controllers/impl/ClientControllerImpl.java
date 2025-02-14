@@ -14,6 +14,7 @@ import sn.ism.auchan.data.entities.Commande;
 import sn.ism.auchan.services.ClientService;
 //import sn.ism.auchan.services.CommandeService;
 import sn.ism.auchan.services.CommandeService;
+import sn.ism.auchan.utils.mappers.ClientMapper;
 import sn.ism.auchan.web.controllers.ClientController;
 import sn.ism.auchan.web.dto.RestResponse;
 import sn.ism.auchan.web.dto.request.ClientCreateRequestWithCommandes;
@@ -37,7 +38,7 @@ public class ClientControllerImpl implements ClientController {
     public ResponseEntity<Map<String, Object>> getAll(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<Client> clients = clientService.getAllClients(pageable);
-        Page<ClientSimpleResponse> simpleClientResponse = clients.map(ClientSimpleResponse::new);
+        Page<ClientSimpleResponse> simpleClientResponse = clients.map(ClientMapper.INSTANCE::toDto);
         return new ResponseEntity<>(
                 RestResponse.responsePaginate(
                         HttpStatus.OK,
@@ -59,7 +60,7 @@ public class ClientControllerImpl implements ClientController {
         if(client == null)
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         return new ResponseEntity<>(RestResponse.response(HttpStatus.OK,
-                new ClientSimpleResponse(client),
+                ClientMapper.INSTANCE.toDto(client),
                 "ClientSimpleResponse"),
                 HttpStatus.OK);
     }
@@ -76,10 +77,10 @@ public class ClientControllerImpl implements ClientController {
             return new ResponseEntity<>(RestResponse.responseError(bindingResult),HttpStatus.BAD_REQUEST);
         }else {
             var clientSaved = clientService.create(client.toEntity());
-            System.out.println(new ClientSimpleResponse(clientSaved));
+            System.out.println(ClientMapper.INSTANCE.toDto(clientSaved));
             return new ResponseEntity<>(
                     RestResponse.response(HttpStatus.OK,
-                            new ClientSimpleResponse(clientSaved),
+                            ClientMapper.INSTANCE.toDto(clientSaved),
                             "ClientWithPaginateCommandeResponse"), HttpStatus.OK
             );
         }
@@ -116,7 +117,8 @@ public class ClientControllerImpl implements ClientController {
         Pageable pageable = PageRequest.of(page, size);
         Page<Commande> commandes = commandeService.getCommandeByClient(id, pageable);
         Page<CommandeSimpleResponse> commandeClientPaginate = commandes.map(CommandeSimpleResponse::new);
-        var clientSimpleResponse = new ClientSimpleResponse(client);
+//        var clientSimpleResponse = new ClientSimpleResponse(client);
+        var clientSimpleResponse = ClientMapper.INSTANCE.toDto(client);
         Map<String, Object> response = new HashMap<>();
         response.put("client", clientSimpleResponse);
         response.put("commandes", RestResponse.responsePaginate(

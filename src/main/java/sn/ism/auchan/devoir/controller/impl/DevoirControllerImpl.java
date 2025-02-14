@@ -34,5 +34,4 @@ public class DevoirControllerImpl implements DevoirController {
         return ResponseEntity.ok(commandeResponse);
     }
 
-//
 }
