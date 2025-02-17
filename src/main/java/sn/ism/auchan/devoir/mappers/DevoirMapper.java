@@ -42,6 +42,9 @@ public class DevoirMapper {
         commande.setDateCommande(commandeRequest.getDate());
         commande.setMontant(commandeRequest.getMontant());
         commande.setClient(client);
+        commande.setRue(client.getRue());
+        commande.setVille(client.getVille());
+        commande.setPays(client.getPays());
         return commande;
     }
 
