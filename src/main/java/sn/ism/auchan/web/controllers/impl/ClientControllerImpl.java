@@ -1,5 +1,6 @@
 package sn.ism.auchan.web.controllers.impl;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -27,6 +28,7 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
+@Tag(name="Clients", description = "Gestion des clients")
 public class ClientControllerImpl implements ClientController {
 
     private final ClientService clientService;
@@ -64,6 +66,7 @@ public class ClientControllerImpl implements ClientController {
                 "ClientSimpleResponse"),
                 HttpStatus.OK);
     }
+
 
     @Override
     public ResponseEntity<Page<ClientSimpleResponse>> create(Client client) {

@@ -1,5 +1,6 @@
 package sn.ism.auchan.web.controllers.impl;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
+@Tag(name="Categories", description = "Gestion des catégories")
 public class CategorieControllerImpl implements CategorieController {
 
     private final CategorieService categorieService;

@@ -1,5 +1,6 @@
 package sn.ism.auchan.web.controllers.impl;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@Tag(name="Articles", description = "Gestion des articles")
 public class ArticleControllerImpl implements ArticleController {
 
     private final ArticleService articleService;
@@ -36,6 +38,9 @@ public class ArticleControllerImpl implements ArticleController {
     @Override
     public ResponseEntity<ArticleOneResponse> getOne(Long id) {
         var article = articleService.getById(id);
+        if (article == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         return new ResponseEntity<>(ArticleMapper.INSTANCE.toDto2(article), HttpStatus.OK);
     }
 

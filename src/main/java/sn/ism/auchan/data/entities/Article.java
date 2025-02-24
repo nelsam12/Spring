@@ -1,5 +1,6 @@
 package sn.ism.auchan.data.entities;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

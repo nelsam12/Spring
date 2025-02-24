@@ -10,6 +10,7 @@ import sn.ism.auchan.data.entities.Commande;
 import sn.ism.auchan.data.repository.ClientRepository;
 import sn.ism.auchan.data.repository.CommandeRepository;
 import sn.ism.auchan.devoir.services.DevoirService;
+import sn.ism.auchan.exceptions.EntityNotFoundException;
 
 @Service
 @Transactional
@@ -43,7 +44,7 @@ public class DevoirServiceImpl implements DevoirService {
         return clientRepository
                 .findById(clientId)
                 .orElseThrow(
-                        () -> new RuntimeException("L'id n'existe pas")
+                        () -> new EntityNotFoundException("L'id n'existe pas")
                 ); // On n'est pas sûr de l'existence de l'ID
 
 
